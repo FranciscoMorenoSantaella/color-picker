@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/color-picker/',
+  basePath: 'https://franciscomorenosantaella.github.io/color-picker',
   entryPoints: {
     '': () => import('./main.server.mjs')
   },
