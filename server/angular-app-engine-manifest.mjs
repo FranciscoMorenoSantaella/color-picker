@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'color-picker',
+  basePath: '/color-picker/',
   entryPoints: {
     '': () => import('./main.server.mjs')
   },
