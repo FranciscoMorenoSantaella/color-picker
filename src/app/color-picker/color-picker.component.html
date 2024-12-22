@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center align-items-center ">
+    <div class="container">
+        <!-- Título principal -->
+        <header class="text-center my-4">
+            <h1 style="padding-top: 15px;">Selector de Colores</h1>
+        </header>
+
+        <!-- Primera sección: Selector de colores -->
+        <section class="row mb-4">
+            <!-- Color Picker -->
+
+
+            <!-- Descripción -->
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <p class="col-8" style="font-size: 20px;">
+                        Encuentra el color perfecto con nuestro selector y descubre hermosas armonías de color,
+                        tintes, matices y tonos. Ingresa códigos Hex, valores RGB y HSL, y genera estilos HTML, CSS y
+                        SCSS.
+                    </p>
+                </div>
+                <div class="row" style="display: flex;">
+                    <div class="col text-center">
+                        <p-colorpicker class="main-preview" [disabled]="true" [(ngModel)]="selectedColorHex" />
+                    </div>
+                </div>
+                <div class="row" style="display: flex;">
+                    <div class="col-md-4 col-sm-12 text-center">
+
+
+                        <p>Hexadecimal</p>
+                        <h2 (click)="onColorClick(selectedColorHex)">{{ selectedColorHex }}</h2>
+                    </div>
+                    <div class="col-md-4 col-sm-12  text-center">
+                        <p>RGB</p>
+                        <h2 (click)="onColorClick(selectedColorHex)">{{ selectedColorRGB }}</h2>
+                    </div>
+                    <div class="col-md-4 col-sm-12  text-center">
+                        <p>HSL</p>
+                        <h2 (click)="onColorClick(selectedColorHex)">{{ selectedColorHSL }}</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row mb-4">
+            <!-- Color Picker -->
+            <div class="col-12 d-flex flex-column align-items-center">
+                <p-colorpicker [inline]="true" (ngModelChange)="onColorChange()" [(ngModel)]="selectedColorHex"
+                    inputId="cp-hex"></p-colorpicker>
+
+                <div class="text-center mt-3">
+
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Segunda sección: Tabla de colores -->
+        <section class="row mb-4 d-none d-md-block">
+            <div class="col-12 text-center">
+                <h1>Tabla de Colores</h1>
+            </div>
+            <div class="col-12">
+                <div class="color-table">
+                    <div class="color-group" *ngFor="let group of [].constructor(19); let groupIndex = index">
+                        <div *ngFor="let div of divs; let i = index" class="color-block">
+                            <p-colorpicker class="table-square" [disabled]="true"
+                                (click)="onColorClick(colors[i + groupIndex * divs.length])"
+                                [(ngModel)]="colors[i + groupIndex * divs.length]" inputId="cp-hex">
+                            </p-colorpicker>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row mb-4 d-block d-md-none">
+            <div class="col-12 text-center">
+                <h1>Tabla de Colores</h1>
+            </div>
+            <div class="col-12">
+                <div class="color-table">
+                    <div class="color-group" *ngFor="let group of [].constructor(6); let groupIndex = index">
+                        <div *ngFor="let div of divs; let i = index" class="color-block">
+                            <p-colorpicker class="table-square" [disabled]="true"
+                                (click)="onColorClick(colors[i + groupIndex * divs.length])"
+                                [(ngModel)]="colors[i + groupIndex * divs.length]" inputId="cp-hex">
+                            </p-colorpicker>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

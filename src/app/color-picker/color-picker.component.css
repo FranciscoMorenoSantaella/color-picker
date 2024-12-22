@@ -1,0 +1,101 @@
+.color-table {
+  display: flex;
+  flex-wrap: wrap;
+  /* Espaciado entre los elementos */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente si es necesario */
+  margin: 0 auto;
+  /* Asegura que el contenedor esté centrado */
+  width: 100%;
+  /* Permite que el contenedor ocupe el ancho completo */
+}
+
+
+
+h2 {
+  border-bottom: 1px solid gray;
+  border-radius: 0.5px;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.container {
+  background-color: white !important;
+  border-radius: 5px;
+  margin-bottom: -50px;
+
+}
+
+:host ::ng-deep .p-colorpicker-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 0px;
+}
+
+:host ::ng-deep p-colorpicker :disabled {
+  opacity: 1;
+}
+
+:host ::ng-deep p-colorpicker :inline {
+  opacity: 1;
+}
+
+/* Estilo para el hover de un color picker específico */
+:host ::ng-deep .p-colorpicker-preview {
+  transition: transform 0.3s ease-in-out;
+  /* Suaviza la transición de tamaño */
+}
+
+/* Aplica el hover con escala y z-index para poner el color picker encima */
+:host ::ng-deep .table-square:hover .p-colorpicker-preview {
+  transform: scale(1.5);
+  /* Aumenta el tamaño del color picker */
+  z-index: 10;
+  /* Coloca el hovered color picker por encima de los demás */
+  position: relative;
+  /* Necesario para que el z-index tenga efecto */
+}
+
+h1 {
+  margin-bottom: 25px;
+}
+
+:host ::ng-deep .main-preview .p-colorpicker-preview{
+  width: 100%;
+  height: 50px;
+}
+/*::ng-deep .p-colorpicker-panel {
+    width: 600px !important;
+    height: 600px !important;
+    background-color: transparent !important;
+  }
+  
+  ::ng-deep .p-colorpicker-panel{
+    width: 550px !important;
+    height: 575px !important;
+  }
+  
+  ::ng-deep .p-colorpicker-color-selector {
+    background-color: red;
+    width: 500px !important;
+    height: 500px !important;
+  }
+
+  ::ng-deep .p-colorpicker-color-handle {
+    background-color: red;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  ::ng-deep .p-colorpicker-panel .p-colorpicker-hue {
+    width: 20px !important;
+    height: 575px !important;
+    margin-left: 400px;
+  }
+  
+  ::ng-deep .p-colorpicker-color-background{
+    width: 500px !important;
+    height: 500px !important;
+  }*/
+
